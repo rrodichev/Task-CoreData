@@ -12,25 +12,22 @@ class TaskDetailViewController: UIViewController {
     // MARK: - Lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let task = task {
+            updateViews(with: task)
+        }
     }
     
     // MARK: - Properties
     var task: Task?
     var date: Date?
     
-    
     // MARK: - Outlets
-    
-    
     @IBOutlet weak var taskNameTextField: UITextField!
-    
     @IBOutlet weak var taskNotesTextView: UITextView!
-    
     @IBOutlet weak var taskDueDatePicker: UIDatePicker!
     
-    
     // MARK: - Actions
-    
     @IBAction func saveButtonTapped(_ sender: Any) {
         
         guard let taskName = taskNameTextField.text, !taskName.isEmpty,
@@ -56,4 +53,4 @@ class TaskDetailViewController: UIViewController {
         taskNotesTextView.text = task.notes
         taskDueDatePicker.date = task.dueDate ?? Date()
     }
-}
+}//End of class

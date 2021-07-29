@@ -19,6 +19,7 @@
 		FA8F87FB26B09DA800659497 /* TaskListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F87FA26B09DA800659497 /* TaskListTableViewController.swift */; };
 		FA8F87FD26B0A11400659497 /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F87FC26B0A11400659497 /* TaskDetailViewController.swift */; };
 		FA8F880026B0A80700659497 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F87FF26B0A80700659497 /* TaskTableViewCell.swift */; };
+		FA8F880D26B2108100659497 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F880C26B2108100659497 /* DateExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		FA8F87FA26B09DA800659497 /* TaskListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListTableViewController.swift; sourceTree = "<group>"; };
 		FA8F87FC26B0A11400659497 /* TaskDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
 		FA8F87FF26B0A80700659497 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
+		FA8F880C26B2108100659497 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 		7EDB766F25B6996A00B80B7D /* Task-CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				FA8F880B26B2106000659497 /* Helpers+Extensions */,
 				7EDB768D25B699AA00B80B7D /* CoreData */,
 				FA8F87F526B096D900659497 /* Controllers */,
 				7EDB768C25B6999F00B80B7D /* Views */,
@@ -149,6 +152,14 @@
 			path = CustomCells;
 			sourceTree = "<group>";
 		};
+		FA8F880B26B2106000659497 /* Helpers+Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FA8F880C26B2108100659497 /* DateExtension.swift */,
+			);
+			path = "Helpers+Extensions";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -220,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7EDB767125B6996A00B80B7D /* AppDelegate.swift in Sources */,
+				FA8F880D26B2108100659497 /* DateExtension.swift in Sources */,
 				7EDB767325B6996A00B80B7D /* SceneDelegate.swift in Sources */,
 				FA8F880026B0A80700659497 /* TaskTableViewCell.swift in Sources */,
 				7EDB767B25B6996A00B80B7D /* Task_CoreData.xcdatamodeld in Sources */,

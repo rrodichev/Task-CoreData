@@ -19,7 +19,7 @@ class TaskTableViewCell: UITableViewCell {
     
     // MARK: - Outlets
     @IBOutlet weak var taskNameLabel: UILabel!
-    
+    @IBOutlet weak var taskDueDateLabel: UILabel!
     @IBOutlet weak var completionButton: UIButton!
     
     // MARK: - Actions
@@ -32,6 +32,7 @@ class TaskTableViewCell: UITableViewCell {
     func updateViews(with task: Task) {
     
         taskNameLabel.text = task.name
+        taskDueDateLabel.text = task.dueDate?.formatToString()
         
         let imageName = task.isComplete ? "complete" : "incomplete"
         completionButton.setImage(UIImage(named: imageName), for: .normal)

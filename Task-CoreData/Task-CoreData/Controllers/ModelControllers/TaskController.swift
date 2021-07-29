@@ -43,6 +43,15 @@ class TaskController {
         CoreDataStack.saveContext()
     }
     
+    func delete(task: Task) {
+        guard let index = tasks.firstIndex(of: task) else { return }
+        
+        CoreDataStack.context.delete(tasks[index])
+        tasks.remove(at: index)
+        
+        CoreDataStack.saveContext()
+    }
+    
     func toggleIsComplete(task: Task) {
         task.isComplete.toggle()
         

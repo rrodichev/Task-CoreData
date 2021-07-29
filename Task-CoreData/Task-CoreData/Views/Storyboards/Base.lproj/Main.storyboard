@@ -24,20 +24,34 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="87"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="272" translatesAutoresizingMaskIntoConstraints="NO" id="Etq-eg-Xaj">
-                                            <rect key="frame" x="20" y="15" width="374" height="57"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="115" translatesAutoresizingMaskIntoConstraints="NO" id="iai-UC-9zv">
+                                            <rect key="frame" x="20.5" y="25" width="373" height="37"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zuH-v4-tcJ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="78" height="57"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Btf-qz-QIh">
+                                                    <rect key="frame" x="0.0" y="0.0" width="234" height="37"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" text="(name)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zuH-v4-tcJ">
+                                                            <rect key="frame" x="0.0" y="0.0" width="234" height="20.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="54.5" id="1gG-py-p7C"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="(dueDate)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V4v-oM-3qB">
+                                                            <rect key="frame" x="0.0" y="25.5" width="234" height="11.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fy7-FG-JhK">
-                                                    <rect key="frame" x="350" y="0.0" width="24" height="57"/>
+                                                    <rect key="frame" x="349" y="13" width="24" height="24"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="24" id="0QL-lx-8xM"/>
-                                                        <constraint firstAttribute="height" constant="24" id="2Pr-bV-as5"/>
+                                                        <constraint firstAttribute="width" constant="24" id="Mdy-tW-a4j"/>
+                                                        <constraint firstAttribute="height" constant="24" id="eVH-Vl-yAP"/>
                                                     </constraints>
                                                     <state key="normal" title="Button" image="incomplete"/>
                                                     <connections>
@@ -48,14 +62,15 @@
                                         </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="Etq-eg-Xaj" secondAttribute="bottom" constant="15" id="4xi-Xt-DK6"/>
-                                        <constraint firstAttribute="trailing" secondItem="Etq-eg-Xaj" secondAttribute="trailing" constant="20" id="DYK-ND-vpq"/>
-                                        <constraint firstItem="Etq-eg-Xaj" firstAttribute="leading" secondItem="0TC-N3-29h" secondAttribute="leading" constant="20" id="Sqp-jL-stc"/>
-                                        <constraint firstItem="Etq-eg-Xaj" firstAttribute="top" secondItem="0TC-N3-29h" secondAttribute="top" constant="15" id="b44-kb-aFe"/>
+                                        <constraint firstItem="iai-UC-9zv" firstAttribute="top" secondItem="0TC-N3-29h" secondAttribute="top" constant="25" id="R8f-Fv-Maq"/>
+                                        <constraint firstItem="iai-UC-9zv" firstAttribute="centerX" secondItem="0TC-N3-29h" secondAttribute="centerX" id="gTW-W5-PQP"/>
+                                        <constraint firstAttribute="bottom" secondItem="iai-UC-9zv" secondAttribute="bottom" constant="25" id="hPs-Tt-n5d"/>
+                                        <constraint firstItem="iai-UC-9zv" firstAttribute="width" secondItem="0TC-N3-29h" secondAttribute="width" multiplier="0.9" id="nF6-7b-X0D"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="completionButton" destination="fy7-FG-JhK" id="g2a-1S-0mo"/>
+                                    <outlet property="taskDueDateLabel" destination="V4v-oM-3qB" id="Agj-zU-nG2"/>
                                     <outlet property="taskNameLabel" destination="zuH-v4-tcJ" id="Dua-ww-zvd"/>
                                     <segue destination="QTz-d5-2mD" kind="show" identifier="toDetailVC" id="PV3-5c-m0d"/>
                                 </connections>
@@ -76,7 +91,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H9E-GS-waA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="562" y="82"/>
+            <point key="canvasLocation" x="560.86956521739137" y="81.696428571428569"/>
         </scene>
         <!--Task Detail View Controller-->
         <scene sceneID="YI2-p9-7CB">
@@ -90,19 +105,25 @@
                                 <rect key="frame" x="20" y="133" width="374" height="684"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter task name…" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bKF-OU-M0E">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="ZjG-G9-BQX"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter notes here…" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qOy-OX-Ilg">
-                                        <rect key="frame" x="0.0" y="114" width="374" height="274"/>
+                                        <rect key="frame" x="0.0" y="115" width="374" height="274"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="8oT-Z8-NX3">
-                                        <rect key="frame" x="0.0" y="468" width="374" height="216"/>
+                                        <rect key="frame" x="0.0" y="469" width="374" height="215"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="215" id="L1C-IQ-DBe"/>
+                                        </constraints>
                                         <connections>
                                             <action selector="dueDatePickerDateChanged:" destination="QTz-d5-2mD" eventType="valueChanged" id="uqB-0Q-d3r"/>
                                         </connections>

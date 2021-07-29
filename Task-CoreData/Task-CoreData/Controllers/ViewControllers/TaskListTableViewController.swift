@@ -12,11 +12,15 @@ class TaskListTableViewController: UITableViewController {
     // MARK: - Lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tableView.delegate = self
+        CoreDataStack.saveContext()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        TaskController.shared.fetchTasks()
         tableView.reloadData()
     }
     
@@ -31,9 +35,19 @@ class TaskListTableViewController: UITableViewController {
         let task = TaskController.shared.tasks[indexPath.row]
         
         cell.taskNameLabel.text = task.name
+        cell.taskDueDateLabel.text = task.dueDate?.formatToString()
         cell.delegate = self
 
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            
+            let taskToDelete = TaskController.shared.tasks[indexPath.row]
+            TaskController.shared.delete(task: taskToDelete)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
     }
 
     // MARK: - Navigation
@@ -61,3 +75,4 @@ extension TaskListTableViewController: TaskCompletionDelegate {
         sender.updateViews(with: task)
     }
 }//End of extension
+
